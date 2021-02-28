@@ -8,6 +8,7 @@ end
 WIN_COMBINATIONS= [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
 def won?(board)
+<<<<<<< HEAD
 
 WIN_COMBINATIONS.each do |win|
   if board[win[0]] == "X" && board[win[1]] == "X" && board[win[2]] == "X"
@@ -41,5 +42,19 @@ end
 def winner(board)
   if over?(board)
   return board[won?(board)[0]]
+=======
+WIN_COMBINATIONS.each do |win|
+win.each do |win_index|
+binding.pry
+if win_index[0] == "X" && win_index[1] == "X" && win_index[2] == "X"
+win.to_a << win[0] && win[1] && win[2]
+elsif win_index[0] == "O" && win_index[1] == "0" && win_index[2] == "0"
+win.to_a << win[0] && win[1] && win[2]
+else
+return
+false
+end
+end
+>>>>>>> 2fcbe6b7bc5a9b7e7f6671be2a1342dbae4512c6
 end
 end
